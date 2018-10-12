@@ -1,5 +1,5 @@
 {
-    "name": "hxsd/kongclient",
+    "name": "vhxsd/kongclient",
     "description": "kong 网关客户端",
     "type": "library",
     "license": "MIT",

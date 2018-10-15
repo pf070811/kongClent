@@ -81,7 +81,6 @@ class Client extends BaseRequest{
         }
         // 根据key排序,引用传参
         ksort($signParam);
-        var_export($signParam);exit;
         // 计算签名
         $sign = md5(implode($this->linkTag, $signParam) . $postSign);
         // 这是私钥,不能出现在请求url上

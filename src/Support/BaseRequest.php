@@ -40,7 +40,7 @@ class BaseRequest
         if (!empty($postParam))
         {
             $method = 'POST';
-            $option['body'] = $postParam;
+            $option['form_params'] = $postParam;
         }
         $response = $this->httpRequest->request($method,$path, $option);
 

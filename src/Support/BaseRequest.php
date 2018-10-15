@@ -42,7 +42,13 @@ class BaseRequest
             $method = 'POST';
             $option['form_params'] = $postParam;
         }
-        $response = $this->httpRequest->request($method,$path, $option);
+        try{
+            $response = $this->httpRequest->request($method,$path, $option);
+        } catch (\Exception $e)
+        {
+            throw new \Exception('Invalid authentication credentials.', $e->getCode());
+        }
+
 
         $body = $response->getBody();
         if ($responseCode = $response->getStatusCode() != 200)
